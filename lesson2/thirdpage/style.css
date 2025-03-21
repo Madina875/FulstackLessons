@@ -1,0 +1,18 @@
+ label {
+    display: block;
+    margin: 8px 0;
+}
+
+.error {
+    display: none; /* Skryvaem oshibki po umolchaniyu */
+    color: red;
+    font-size: 12px;
+}
+
+input:invalid + .error {
+    display: block; /* Pokazyvaem oshibku tolko esli vvedeno nepravilno */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}

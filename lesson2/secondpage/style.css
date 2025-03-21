@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+form {
+    width: 450px;
+    padding: 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+fieldset {
+    border: 1px solid gray;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+legend {
+    color: blue;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 8px 0;
+}
+
+input, select {
+    padding: 5px;
+    width: 200px;
+}
+
+button {
+    padding: 8px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.error {
+    color: rgba(255, 0, 0, 0.393);
+    font-size: 12px;
+    display: block;
+}
