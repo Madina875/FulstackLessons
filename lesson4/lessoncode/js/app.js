@@ -8,19 +8,17 @@
 // console.log(printNumber());
 // //java will do return  automaticaly | if it'll return by own it'll show undefined in the console
 
-
 // const prNum = printNumber;
 // prNum();
 // //return3 if you'll save it to another variable and write beneath it'll do same work
 
-
+//o'zidan tepada ishlatsa bo'ladi
 //function decloration looks like :
 // function summa(a, b) {
 //     // a and b it is param.
 //   return a + b;
 // }
 // console.log(summa(2, 3)); //argument
-
 
 // // yu can't add argument to function before do it only after calling the function
 
@@ -303,9 +301,6 @@
 
 // console.log(summa(rev, 0));
 // alert(`siz kiritgan son teskarisi:${summa(rev, 0)}`);
-
-
-
 
 //task3
 
