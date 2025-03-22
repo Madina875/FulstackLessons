@@ -57,17 +57,18 @@ console.log(`Natija: ${biggest}`);
 
 // ================= 4 - task ====================== //
 
-// const data2 = {
-//   user: {
-//     name: "Ali",
-//     address: {
-//       city: "Tashkent",
-//       zip: "100100",
-//     },
-//   },
-// };
+const data2 = {
+  user: {
+    name: "Ali",
+    address: {
+      city: "Tashkent",
+      zip: "100100",
+    },
+  },
+};
 
-// console.log(data2);
+console.log(data2);
+
 // Natija:
 // {
 //   "user.name": "Ali",
@@ -75,14 +76,14 @@ console.log(`Natija: ${biggest}`);
 //   "user.address.zip": "100100"
 // }
 
-// flattenObject(data2){
-//   for (key in data2){
-//     console.log(key);
-//   }
-// }
+function flattenObject(data2) {
+  for (key in data2) {
+    console.log(...key, ...data2[key]);
+  }
+}
+flattenObject(data2);
 
 // ================= 5- task ===================== //
-// 2ta obj yaratildi :
 const player1 = {
   name: 12,
   age: 22,
