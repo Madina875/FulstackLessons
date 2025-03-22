@@ -10,7 +10,7 @@ const doira = {
   },
 };
 
-console.log(doira["radius"]);
+// console.log(doira["radius"]);
 doira.DoiraYuzasi();
 
 // ================== 2 - task ================== //
@@ -21,22 +21,86 @@ const objj = {
 };
 
 function InvertKeyValue(obj) {
+  const objjj = {};
   for (key in obj) {
-    console.log(`${obj[key]} : ${key}`);
+    objjj[obj[key]] = key;
   }
+  console.log(objjj);
 }
 
 InvertKeyValue(objj);
 
 // ================= 3 - task ================== //
 
-const data = { a: 3, b: 5, c: 3, d: 7, e: 5, f: 5 };
+const a = {
+  a: 22,
+  b: 33,
+  s: 44,
+};
+firstNumber = 0;
 
-function findNumber(objj) {
-  ob = {};
-  for (key in objj) {
+for (key in a) {
+  if (Number(a[key])) {
+    firstNumber = a[key];
+    break;
+  }
+}
+let biggest = 0;
+
+for (key in a) {
+  if (firstNumber < a[key]) {
+    biggest = a[key];
   }
 }
 
-console.log(findNumber(data));
-// findNumber(data);
+console.log(`Natija: ${biggest}`);
+
+// ================= 4 - task ====================== //
+
+// const data2 = {
+//   user: {
+//     name: "Ali",
+//     address: {
+//       city: "Tashkent",
+//       zip: "100100",
+//     },
+//   },
+// };
+
+// console.log(data2);
+// Natija:
+// {
+//   "user.name": "Ali",
+//   "user.address.city": "Tashkent",
+//   "user.address.zip": "100100"
+// }
+
+// flattenObject(data2){
+//   for (key in data2){
+//     console.log(key);
+//   }
+// }
+
+// ================= 5- task ===================== //
+// 2ta obj yaratildi :
+const player1 = {
+  name: 12,
+  age: 22,
+  number: 33,
+};
+console.log(player1);
+
+const player2 = {
+  name: 12,
+  age: 22,
+  number: 33,
+};
+console.log(player2);
+
+// yechimi :
+
+let countt = 0;
+for (key in player1) countt += 1;
+trues = 0;
+for (i in player1) player1[i] == player2[i] ? trues++ : trues--;
+trues == countt ? console.log("true") : console.log("false");
