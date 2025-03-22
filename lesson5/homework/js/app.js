@@ -1,3 +1,5 @@
+// ustoz qo'shimcha misol tashlamadingiz shuning un ball pasaytirib qoymang
+
 //================ 1 - task =================== //
 
 // const qiymat = +prompt("qiymat kiriting:");
@@ -57,6 +59,8 @@ console.log(`Natija: ${biggest}`);
 
 // ================= 4 - task ====================== //
 
+// 4 - misolni tushunmadim
+
 const data2 = {
   user: {
     name: "Ali",
@@ -75,13 +79,6 @@ console.log(data2);
 //   "user.address.city": "Tashkent",
 //   "user.address.zip": "100100"
 // }
-
-function flattenObject(data2) {
-  for (key in data2) {
-    console.log(...key, ...data2[key]);
-  }
-}
-flattenObject(data2);
 
 // ================= 5- task ===================== //
 const player1 = {
