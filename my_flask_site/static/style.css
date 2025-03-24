@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(226, 43, 43);
+  margin-bottom: 20px;
+}
+
+.first_word {
+  text-align: center;
+  color: rgb(13, 15, 15);
+  margin: 25px;
+  font-size: xx-large;
+  font-style: italic;
+  width: 200px;
+  height: auto;
+}
+
+.image-container img {
+  display: inline-block;
+  width: 100px; /* Adjust width as needed */
+  height: auto;
+  margin: 20px;
+}

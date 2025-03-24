@@ -1,0 +1,18 @@
+form {
+  border: 1px;
+  border-color: black;
+}
+label {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 2px;
+}
+
+fieldset {
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+b {
+  color: blue;
+}

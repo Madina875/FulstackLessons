@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
     <h1>My feedback form</h1>
 
-    <form >
-      
-            <label>Name: 
-                <input type="text" name="name" required>
-                <span class="error">Name is required.</span>
-            </label>
+    <form>
+      <label
+        >Name:
+        <input type="text" name="name" required />
+        <span class="error">Name is required.</span>
+      </label>
 
-            <label>Email: 
-                <input type="email" name="email" required>
-                <span class="error">Email address is invalid.</span>
-            </label>
+      <label
+        >Email:
+        <input type="email" name="email" required />
+        <span class="error">Email address is invalid.</span>
+      </label>
 
-            <label>Phone: 
-                <input type="tel" name="phone" pattern="\d{3}-\d{3}-\d{4}" required placeholder="123-456-7890">
-                <span class="error">Phone number is invalid.</span>
-            </label>
+      <label
+        >Phone:
+        <input
+          type="tel"
+          name="phone"
+          pattern="\d{3}-\d{3}-\d{4}"
+          required
+          placeholder="123-456-7890"
+        />
+        <span class="error">Phone number is invalid.</span>
+      </label>
 
-            <p>Please check all the emotions that apply to you: </p>
-            <label>
-                <input type="radio" name="room" value="standard" required> Angry
-                <input type="radio" name="room" value="business"> Sad
-                <input type="radio" name="room" value="suite"> Happy
-                <input type="radio" name="room" value="suite"> Ambivalent
-            </label>
-            
-            <p>How satisfied were you with our service? </p>
-            <label>
-                <input type="radio" name="room" value="standard" required> Very satisfied
-                <input type="radio" name="room" value="business"> Satisfied
-                <input type="radio" name="room" value="suite"> Didn't care
-                <input type="radio" name="room" value="suite"> Disatisfied
-                <input type="radio" name="room" value="suite"> Very dissatisfied
-            </label>
+      <p>Please check all the emotions that apply to you:</p>
+      <label>
+        <input type="radio" required /> Angry
+        <input type="radio" /> Sad
+        <input type="radio"  /> Happy
+        <input type="radio"  /> Ambivalent
+      </label>
 
-             <label class="coment">Further comments: 
-                <input type="text" name="comments">
-            </label>
-             <label>Bio photo:  
-                <select name="photo">
-                    <option></option>
-                    <option>https://i.pinimg.com/736x/58/47/7f/58477fbdd29d8b0e50bc11545d6e057f.jpg</option>
-                    <option>https://i.pinimg.com/736x/ac/23/08/ac23088cf31d95ddad361d96795db65b.jpg</option>
-                </select> 
-            </label>
-            <label>location: 
-                <select name="location">
-                    <option></option>
-                    <option>USA</option>
-                    <option>UZBEKISTAN</option>
-                    <option>RUSSIA</option>
-                    <option>GERMANY</option>
-                </select>
-            </label>
+      <p>How satisfied were you with our service?</p>
+      <label>
+        <input type="radio"  required /> Very
+        satisfied <input type="radio"   /> Satisfied
+        <input type="radio" /> Didn't care
+        <input type="radio" /> Disatisfied
+        <input type="radio"/> Very dissatisfied
+      </label>
 
-             <button type="submit">submit</button>
-             
+      <label class="coment"
+        >Further comments:
+        <input type="text"/>
+      </label>
+      <label
+        >Bio photo:
+        <select name="photo">
+          <option></option>
+          <option>
+            https://i.pinimg.com/736x/58/47/7f/58477fbdd29d8b0e50bc11545d6e057f.jpg
+          </option>
+          <option>
+            https://i.pinimg.com/736x/ac/23/08/ac23088cf31d95ddad361d96795db65b.jpg
+          </option>
+        </select>
+      </label>
+      <label
+        >location:
+        <select name="location">
+          <option></option>
+          <option>USA</option>
+          <option>UZBEKISTAN</option>
+          <option>RUSSIA</option>
+          <option>GERMANY</option>
+        </select>
+      </label>
 
+      <button type="submit">submit</button>
     </form>
-</body>
+  </body>
 </html>

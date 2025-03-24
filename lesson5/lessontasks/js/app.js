@@ -1,72 +1,73 @@
-// //to create an object
-// // const obj1 = {};
-// // console.log(obj1);
+// to create an object
+// const obj1 = {};
+// console.log(obj1);
 
-// // const fruits = new Object();
-// // console.log(fruits);
-// // console.log(typeof fruits); // to find the type
+// const fruits = new Object();
+// console.log(fruits);
+// console.log(typeof fruits); // to find the type
 
-// // // object everytime will start with const
-// // const mevalar = {
-// //   nomi: "Olma", // properties of the object < key : value >
-// //   narxi: 15000,
-// //   rangi: "qizil",
-// //   "shirin mevami": true, // "" ning ichida yozish shart ' to be the key '
-// //   2: "ikki", // number is str whithout writing that it is the str
-// //   2: "ikki str", // it'll take the least
-// // };
+// // object everytime will start with const
+// const mevalar = {
+//   nomi: "Olma", // properties of the object < key : value >
+//   narxi: 15000,
+//   rangi: "qizil",
+//   "shirin mevami": true, // "" ning ichida yozish shart ' to be the key '
+//   2: "ikki", // number is str whithout writing that it is the str
+//   2: "ikki str", // it'll take the least
+// };
 
-// // console.log(mevalar);
-// // console.log(mevalar.nomi); // to get the value if 'nomi'
-// // console.log(mevalar["nomi"]);
-// // // console.log(mevalar[nomi]); the wrong type using without ' "" '
+// console.log(mevalar);
+// console.log(mevalar.nomi); // to get the value if 'nomi'
+// console.log(mevalar["nomi"]);
+// // console.log(mevalar[nomi]); the wrong type using without ' "" '
 
-// // const mevalar = {
-// //   nomi: "Olma", // properties of the object < key : value >
-// //   narxi: 15000,
-// //   rangi: "qizil",
-// //   "shirin mevami": true,
-// //   2: "ikki",
-// //   2: "ikki str",
-// // };
+// const mevalar = {
+//   nomi: "Olma", // properties of the object < key : value >
+//   narxi: 15000,
+//   rangi: "qizil",
+//   "shirin mevami": true,
+//   2: "ikki",
+//   2: "ikki str",
+// };
 
-// // mevalar.narxi = 10000;
-// // delete mevalar[2];
-// // console.log(mevalar["narxi"]); // change excisting
+// mevalar.narxi = 10000;
+// delete mevalar[2];
+// console.log(mevalar["narxi"]); // change excisting
 
-// // mevalar.madeIN = "UZB";
-// // console.log(mevalar["madeIN"]); // add new
+// mevalar.madeIN = "UZB";
+// console.log(mevalar["madeIN"]); // add new
+// console.log(mevalar);
 
-// // const box = {
-// //   material: "paper",
-// //   color: ["white", "black", "brown", { 1: "true" }],
-// //   size: {
-// //     width: 21,
-// //     height: 22,
-// //     length: 23,
-// //   },
-// // };
+// const box = {
+//   material: "paper",
+//   color: ["white", "black", "brown", { 1: "true" }],
+//   size: {
+//     width: 21,
+//     height: 22,
+//     length: 23,
+//   },
+// };
 
-// // console.log(box);
-// // console.log(box.color[1]);
-// // console.log(box.size.height);
-// // console.log(box.color[3][1]);
-// // console.log(box?.size?.length); // if x not exist the output y
-// // if ("size" in box) {
-// //   console.log(box.size.length);
-// // }
+// console.log(box);
+// console.log(box.color[1]);
+// console.log(box.size.height);
+// console.log(box.color[3][1]);
+// console.log(box?.size?.length); // if x not exist the output y
+// if ("size" in box) {
+//   console.log(box.size.length);
+// }
 
-// // if ("size" in box && "lenght" in box.size) {
-// //   console.log(box.size.length);
-// // }
+// if ("size" in box && "lenght" in box.size) {
+//   console.log(box.size.length);
+// }
 
-// // forin function : everything will output automaticaly
-// // for (const   in object) {
-// //     if (Object.prototype.hasOwnProperty.call(object,  )) {
-// //         const element = object[ ];
+// forin function : everything will output automaticaly
+// for (const   in object) {
+//     if (Object.prototype.hasOwnProperty.call(object,  )) {
+//         const element = object[ ];
 
-// //     }
-// // }
+//     }
+// }
 
 // const box = {
 //   material: "paper",
@@ -213,115 +214,110 @@
 //     this.first_name = newName;
 //   },
 // };
-
 // console.log(user);
+
 // console.log(user.setFirstName("Zafarjon"));
+// console.log(user);
 
 // user.firstName = "Zafarella"; // get bn set bir hil bolishi kk bu console usul set deyiladi  setter '=' bn
-
 // console.log(user.firstName); // xususiyat kabi murojat qilamiz
+// console.log(user);
 
 //////////////////////////////////////
 
-const product = {
-  nomi: "Ruchka",
-  miqdor: 15,
-  narxi: 15000,
-  ProductInfo: function () {
-    console.log(
-      `nomi: ${this.nomi} , miqdori: ${this.miqdor} , narxi: ${this.narxi}`
-    );
-  },
+// const product = {
+//   nomi: "Ruchka",
+//   miqdor: 15,
+//   narxi: 15000,
+//   ProductInfo: function () {
+//     return `nomi: ${this.nomi} , miqdori: ${this.miqdor} , narxi: ${this.narxi}`;
+//   },
+//   SetPrice: function (Price) {
+//     return (this.narxi = Price);
+//   },
+// };
 
-  SetPrice: function (Price) {
-    console.log(this.narxi == Price);
-  },
-};
+// console.log(product);
+// console.log(product.ProductInfo());
+// console.log(product.SetPrice(300000));
+// console.log(product.ProductInfo());
 
-// const tovar = { ...product };
-// tovar.SetPrice = 200000;
+// ///////////////////////////////////////////////////////
+// const a = {
+//   a: 10,
+//   b: 20,
+//   c: "hello",
+//   d: 30,
+// };
 
-console.log(product);
-console.log(product.ProductInfo());
-console.log(product.SetPrice(300000));
+// let count = 0;
+// let sum = 0;
+// for (key in a) {
+//   if (Number(a[key])) {
+//     count++;
+//     sum += a[key];
+//   }
+// }
+// console.log(sum);
 
-console.log(product.SetPrice);
-///////////////////////////////////////////////////////
-const a = {
-  a: 10,
-  b: 20,
-  c: "hello",
-  d: 30,
-};
+// //////////////////////////////////////////////////////
 
-let count = 0;
-let sum = 0;
-for (key in a) {
-  if (Number(a[key])) {
-    count++;
-    sum += a[key];
-  }
-}
-console.log(sum);
+// const b = {
+//   Ali: 10,
+//   Bekzod: 20,
+//   Vali: "hello",
+//   Fayz: 30,
+// };
 
-//////////////////////////////////////////////////////
+// let biggest = 0;
 
-const b = {
-  Ali: 10,
-  Bekzod: 20,
-  Vali: "hello",
-  Fayz: 30,
-};
+// for (key in b) {
+//   if (Number(b[key])) {
+//     biggest = b[key];
+//     break;
+//   }
+// }
+// // console.log(biggest);
 
-let biggest = 0;
+// let bbb = biggest;
 
-for (key in b) {
-  if (Number(b[key])) {
-    biggest = b[key];
-    break;
-  }
-}
-console.log(biggest);
+// for (key2 in b) {
+//   if (Number(b[key2]) > bbb) {
+//     bbb = b[key2];
+//   }
+// }
 
-let bbb = biggest;
+// console.log(bbb);
 
-for (key2 in b) {
-  if (Number(b[key2]) > bbb) {
-    bbb = b[key2];
-  }
-}
+// ////////////////////////////////////////////////////////////
 
-console.log(bbb);
+// const c = {
+//   Ali: 10,
+//   Bekzod: 20,
+//   Vali: "hello",
+//   Fayz: 30,
+// };
 
-////////////////////////////////////////////////////////////
-
-const c = {
-  Ali: 10,
-  Bekzod: 20,
-  Vali: "hello",
-  Fayz: 30,
-};
-
-for (key in c) {
-  console.log(`${c[key]} : ${key}`);
-}
-//////////////////////////////////////////////////////
+// for (key in c) {
+//   console.log(`${c[key]} : ${key}`);
+// }
+// //////////////////////////////////////////////////////
 
 // console.log("222222222".length);
 
-const d = {
-  Ali: "HI",
-  Bekzod: "YOU",
-  Vali: "hello",
-  Fayz: "UZBEKISTAN",
-};
+// const d = {
+//   Ali: "HI",
+//   Bekzod: "YOU",
+//   Vali: "hello",
+//   Fayz: "UZBEKISTAN",
+// };
 
-for (i in d) {
-  if (d[i] == Number(d[i])) {
-    console.log(d[i]);
-  } else {
-    console.log(String(d[i]).length);
-  }
-}
+// for (i in d) {
+//   if (d[i] == Number(d[i])) {
+//     console.log(d[i]);
+//   } else {
+//     console.log(String(d[i]).length);
+//   }
+// }
 
-///////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////

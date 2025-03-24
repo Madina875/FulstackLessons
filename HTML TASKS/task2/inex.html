@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h2>My feedback form</h2>
+
+      <li>Name: <input type="text" required /></li>
+      <li>Email: <input type="text" /></li>
+      <li>Password: <input type="password" /></li>
+
+      <li>Please check all the emotions that apply to you :</li>
+      <ul>
+        <li>Angry <input type="checkbox" /></li>
+        <li>Sad <input type="checkbox" class="checkbox" /></li>
+        <li>Ambivalent <input type="checkbox" /></li>
+      </ul>
+
+      <li>How satisfied were you with our service?</li>
+      <ul>
+        <li>Very satisfied<input type="radio" /></li>
+        <li>Satisfied<input type="radio" /></li>
+        <li>Didn't care <input type="radio" /></li>
+        <li>Very disatisfied <input type="radio" /></li>
+      </ul>
+
+      <li>Further comments:<input type="text" /></li>
+      <li>
+        <label
+          >Bio photo:
+          <select name="photo">
+            <option></option>
+            <option>USA</option>
+            <option>GERMANY</option>
+          </select>
+        </label>
+        <button>chose...</button>
+      </li>
+
+      <li>
+        <label
+          >Lovation visited:
+          <select name="location">
+            <option></option>
+            <option>America</option>
+            <option>somewhere where we are happy</option>
+            <option>nowhere</option>
+          </select>
+        </label>
+      </li>
+
+      <li><button type="submit">Submit</button></li>
+    </form>
+  </body>
+</html>

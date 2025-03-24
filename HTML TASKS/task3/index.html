@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h1>Reservation request</h1>
+      <b>General Information</b>
+      <fieldset>
+        <label
+          >Arrival date:
+          <input
+            type="text"
+            placeholder="MM/DD/YYYY"
+            pattern="(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\d{4}"
+          />
+        </label>
+        <label>Nights: <input type="text" pattern="\d{999}" /></label>
+        <label>Adults: <input type="number" /></label>
+        <label>Children: <input type="number" /></label>
+      </fieldset>
+
+      <b>Preferences</b>
+      <fieldset>
+        <label
+          >Room type: <input type="radio" />Standard
+          <input type="radio" />Business <input type="radio" />Suite
+        </label>
+
+        <label
+          >Bed type: <input type="radio" />King <input type="radio" />Double
+          Double
+        </label>
+        <label><input type="checkbox" />Smoking</label>
+      </fieldset>
+      <b>Contact information</b>
+
+      <fieldset>
+        <label>Name: <input type="text" required /></label>
+        <label>Email: <input type="email" /></label>
+        <label
+          >Phone: <input type="text" pattern="\d{3}-\d{3}-\d{4}"
+          placeholder="123-123-123"</label
+        >
+      </fieldset>
+
+      <button type="submit">Submit Reservasion</button>
+      <button type="reset">Clear</button>
+    </form>
+  </body>
+</html>

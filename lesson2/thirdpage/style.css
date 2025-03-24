@@ -4,15 +4,17 @@
 }
 
 .error {
-    display: none; /* Skryvaem oshibki po umolchaniyu */
+    display: none; 
     color: red;
     font-size: 12px;
 }
 
 input:invalid + .error {
-    display: block; /* Pokazyvaem oshibku tolko esli vvedeno nepravilno */
-}
+    display: block; 
+
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
+}
+
