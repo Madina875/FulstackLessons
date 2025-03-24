@@ -12,7 +12,7 @@ const doira = {
   },
 };
 
-console.log(doira["radius"]);
+// console.log(doira["radius"]);
 doira.DoiraYuzasi();
 
 // ================== 2 - task ================== //
