@@ -196,17 +196,9 @@
 // console.log(str1.substring(0, 5)); // kesib olib berish lekin agar 5 ,0 deb berilsa javob ozgarmaydi
 // console.log(str1.substring(-3)); // olib bermaydi
 
-/////////////////////////////////////////////////////////////
-// uppercase it
-
-// const userName = "noDir";
-
-// let sss = userName.trim().toLowerCase().split("").join("");
-// console.log(sss);
-
 ///////////////////////////////////////////////////////////
 
-// const news = "nimadir";
+const news = "nimadir";
 // console.log(news.startsWith("Yana"));
 // console.log(news.startsWith("Yana"), 11);
 // console.log(news.endsWith("kerak?"));
@@ -218,7 +210,7 @@
 // console.log("😊".length);
 // console.log(news.search(/nimadir/));
 // console.log(news.search(/nimadir/i)); // orasida kattasi yoki huddi shu harfni kichifgi bolsa hisobga olmasdan topib beadi
-// console.log(news.concat(".", "!")); // tekstda x ni y ga ozgartirish
+// console.log(news.concat(".", "!")); // qoshish
 
 //////////////////////////////////////////////////////////////////
 
@@ -228,28 +220,32 @@
 /////////////////////////////////////////////////////////////////
 // tasks//
 
-const username = "noDir";
-function capitalize(username) {
-  return username[0].toUpperCase() + username.slice(1).toLowerCase();
-}
-console.log(capitalize(username));
+// const username = "noDir";
+// function capitalize(username) {
+//   return username[0].toUpperCase() + username.slice(1).toLowerCase();
+// }
+// console.log(capitalize(username));
 
 //////////////////////////////////2
 
-sstr = "$121$";
-let answer = "";
-for (let index = 0; index < sstr.length; index++) {
-  if (sstr[index] == Number(sstr[index])) {
-    const element = sstr[index];
-    answer += element;
-  }
-}
-console.log(answer);
+// sstr = "$121";
+// console.log(sstr.slice(1));
+// //yoki :
+// let answer = "";
+// for (let index = 0; index < sstr.length; index++) {
+//   if (sstr[index] == Number(sstr[index])) {
+//     const element = sstr[index];
+//     answer += element;
+//   }
+// }
+// console.log(answer);
 
 //////////////////////////////
 
-sstr2 = "qwerty";
-
+sstr2 = "mom";
+// //
+// console.log(sstr2.startsWith(sstr2[-1]));
+//
 sstr2in = "";
 
 length_of_it = sstr2.length;
@@ -338,8 +334,6 @@ console.log(result);
 
 numbers = [12, 34, 556, 23, 1456];
 let sum = 0;
-
-
 
 for (i in numbers) {
   console.log((numbers[i] = numbers[i]));
