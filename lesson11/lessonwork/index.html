@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li class="item">Mers</li>
+      <li class>Malibu</li>
+      <li>BYD</li>
+    </ul>
+
+    <!-- <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum error sit amet.</p>
+    <p>Lorem ipsum dolor sit succes.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor succes amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum succeserror sit amet.</p>
+
+    <style>
+      .succes {
+        padding: 10px;
+        color: green;
+        border: 1px dotted green;
+      }
+      .error {
+        padding: 10px;
+        color: red;
+        border: 1px dotted red;
+      }
+    </style>
+    <script>
+      const menuItems = document.querySelectorAll("p");
+      menuItems.forEach((item) => {
+        console.log(item);
+        if (item.textContent.toLowerCase().includes("succes")) {
+          item.classList.add("succes");
+        } else if (item.textContent.toLowerCase().includes("error")) {
+          item.classList.add("error");
+        }
+      });
+    </script> -->
+
+    <!-- <p class="succes">salom</p>
+    <p class="error">xayr</p>
+    <style>
+      .succes {
+        padding: 10px;
+        color: green;
+        border: 1px dotted green;
+      }
+      .error {
+        padding: 10px;
+        color: red;
+        border: 1px dotted red;
+      }
+    </style>
+    <script>
+      const pEl = document.querySelector("p");
+      console.log(pEl.classList);
+      console.log(pEl.classList.value); // borderni ochirib tashlash
+      pEl.classList.remove("succes");
+      pEl.classList.add("succes"); // endi qoshildi
+      pEl.classList.toggle("succes"); // bor bolsa ochiradi ,ochirib tashlangan bolsa qoshiladi
+    </script> -->
+
+    <!-- <a href="https:najottalim.uz" class="najot">Najot talim</a>
+    <a href="https:it-park.uz" class="najot">It park</a>
+
+    <script>
+      const link = document.querySelector("a");
+      console.log(link.getAttribute("href"));
+      console.log(link.getAttribute("class"));
+      link.setAttribute("class", "najttalim");
+      link.setAttribute("id", "nt");
+      link.setAttribute("style", "color:red");
+      link.setAttribute(
+        "style",
+        `${link.getAttribute("style")};background:yellow`
+      );
+      link.style.margin = "10px";
+      link.style.padding = "10px";
+      console.log(link.getAttribute("class"));
+    </script> -->
+
+    <!-- <h1>DOM va DOM daraxti</h1>
+    <nav>
+      <a href=""><span style="color: brown">Main</span></a>
+      <a href="">About</a>
+      <a style="display: none">Products</a>
+      <a href="">Contacts</a>
+    </nav>
+    <script>
+      const navEl = document.querySelector("nav");
+      console.log(navEl.innerHTML);
+      console.log(navEl.innerHTML);
+      console.log(navEl.innerText); // stil kochirib chiqaradi
+      console.log(navEl.textContent); // ichidagi barcha tekstlarni chiqarib beradi
+    </script> -->
+
+    <!-- 
+    <div id="div1">Birinchi DIV</div>
+    <div>Ikkinchi DIV</div>
+
+    <script>
+      const duv1 = document.querySelector("#div1");
+      console.log(div1.innerHTML);
+      console.log((div1.outerHTML = "<p>lorem5</p>")); // bu orqali blogimizni boshqa blok ga almashtirish mm masalan p ga
+    </script> -->
+    <!-- 
+    <div>Birinchi DIV</div>
+    <div>Ikkinchi DIV</div>
+    <script>
+      const divs = document.querySelectorAll("div");
+      // const divs = document.querySelectorAll("div");
+      // console.log(divs);
+      console.log(divs.length);
+    </script>
+    <div>Uchinchi div</div>
+    <script>
+      // console.log(divs);
+      console.log(divs.length);
+    </script> -->
+
+    <!-- 
+    <div class="content">
+      <ul class="book">
+        <li class="chapter">1-bo'lim</li>
+        <li class="chapter">2-bo'lim</li>
+      </ul>
+    </div> -->
+    <!-- 
+    <div>
+      <ul>
+        <li name="case11">CASE-1</li>
+        <li>CASE-2</li>
+        <li>CASE-3</li>
+      </ul>
+      <ul>
+        <li id="case21">CASE-2.1</li>
+        <li id="case22">CASE-2.2</li>
+        <li class="case23">CASE-2.3</li>
+      </ul>
+      <ul>
+        <li name="case11">CASE-3.1</li>
+        <li>CASE-3.2</li>
+        <li class="case23">CASE-3.3</li>
+      </ul>
+    </div>
+    <a href="https://kun.uz">kun.uz</a>
+    <a href="https://daryo.uz">daryo.uz</a>
+    <a href="https://example.com/file1.zip">file1</a>
+    <a href="https://example.com/file2.zip">file2</a> -->
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
