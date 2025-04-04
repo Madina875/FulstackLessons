@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(80, 67, 230);
+}
+.container {
+  width: 95%;
+  margin: 20px auto;
+  justify-content: center;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
