@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: darkorchid;
+}
+.container {
+  width: 600px;
+  min-height: 200px;
+  background-color: white;
+  margin: 50px auto;
+  text-align: center;
+  padding: 10px 30px;
+}
+.add-form {
+  display: flex;
+  gap: 10px;
+}
+.add-input {
+  width: 85%;
+  padding: 10px;
+  border-radius: 2px;
+  border: 0.5px solid black;
+}
+
+.plus-btn {
+  width: 10%;
+  background-color: blueviolet;
+  border-style: none;
+  color: white;
+  font-size: 25px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.plus-btn:active {
+  background-color: cornflowerblue;
+  transition: inherit;
+}
+.item {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+  padding: 5px;
+  background-color: #8dbed7;
+}
+/* 
+.lists {
+  margin-bottom: 20px;
+} */
+
+hide {
+  border: 5px;
+}

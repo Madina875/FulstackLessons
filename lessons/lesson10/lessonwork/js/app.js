@@ -221,8 +221,10 @@
 // });
 
 /////////////////////////////////////////////////////////////////////////////////////
+// abstraction - mavhumlik
+// encapsulation - public private ... himoyalash
+//polimorfizm - otasidan olgan metodni ozgartirish
 
-// encapsulation - public private ...
 // pub hususiyatlar-clas ichdagi  bevosita obyekt yoki ...  tashqaridan turib ozgartirish mumkin boladi
 // private -
 // class Workers {

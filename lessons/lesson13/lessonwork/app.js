@@ -86,17 +86,3 @@
 // loadaJSONData();
 
 ////////////////////////////////////////////////////////////////
-
-const API_KEY = "1e5a1f74d4a597c844f45861f0fb3e59";
-
-const city = prompt("shahar nomini kiriting:");
-
-const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
-
-async function getWeather(url) {
-  const weather = await fetch(url);
-  const jsonWeather = await weather.json();
-  const doc = (document.body.children[0].textContent = jsonWeather);
-  console.log(doc);
-}
-getWeather(API_URL);

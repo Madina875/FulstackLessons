@@ -1,0 +1,38 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #c706f7;
+  place-items: center;
+}
+button {
+  padding: 15px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 150px;
+  cursor: pointer;
+  margin: 20px;
+  font-size: large;
+  font-style: oblique;
+}
+#pokemon {
+  display: grid;
+  background-color: #e8a0fa;
+  color: rgb(21, 20, 20);
+  margin-bottom: 30px;
+  background-size: 50;
+  font-size: larger;
+  border-radius: 30px;
+}
+
+.uls {
+   color: rgb(2, 10, 10);
+}
+
+
+img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
