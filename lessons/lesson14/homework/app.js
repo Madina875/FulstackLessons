@@ -26,7 +26,7 @@ let a = /\b(?:[A-Z]{1}\s\d{6}\s\d{2})\b/;
 const carnum = prompt("avtomobil raqamini kiriting:");
 const regexes = [q, w, e, r, t, y, u, i, o, p, a];
 const isValid = regexes.some((reg) => reg.test(carnum));
-// some arr ichini tekshiradi va birinchi chiqqan false ni qaytatib yuboradi
+// some arr ichini tekshiradi va birinchi chiqqan false ni qaytatib yuboradi va toxtaydi
 console.log(isValid);
 
 //or
