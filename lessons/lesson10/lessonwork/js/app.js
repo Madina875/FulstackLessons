@@ -131,31 +131,31 @@
 // // box1.style.height = "100px"; // ichini ozgartirish
 // // box1.style.width = "100px";
 
-// class MyComponent {
-//   constructor(params) {
-//     // hozir pasda nuqtadan keyin yana yozilsa berilganni tanlab olish imkonini beradi
-//     this.element = document.querySelector(params.selector); //quertSElector korsatgan malumotimiz boyicha tanlab olish imkoniyati beriladi
-//   }
+class MyComponent {
+  constructor(params) {
+    // hozir pasda nuqtadan keyin yana yozilsa berilganni tanlab olish imkonini beradi
+    this.element = document.querySelector(params.selector); //quertSElector korsatgan malumotimiz boyicha tanlab olish imkoniyati beriladi
+  }
 
-//   show() {
-//     this.element.style.display = "block";
-//   }
+  show() {
+    this.element.style.display = "block";
+  }
 
-//   hide() {
-//     this.element.style.display = "none";
-//   }
-// }
+  hide() {
+    this.element.style.display = "none";
+  }
+}
 
 // // stil berish un voris oamiz
 
-// class Box extends MyComponent {
-//   constructor(params) {
-//     super(params);
-//     this.element.style.background = params.color;
-//     this.element.style.height = params.height;
-//     this.element.style.width = params.width;
-//   }
-// }
+class Box extends MyComponent {
+  constructor(params) {
+    super(params);
+    this.element.style.background = params.color;
+    this.element.style.height = params.height;
+    this.element.style.width = params.width;
+  }
+}
 
 // // natijada stil beradigan class bor
 
@@ -203,22 +203,22 @@
 // //////////////////////////////// misol /////////////////////////////
 // // yoniga barchasini yozib tirmaslik un box dan voris olib ozgartirish
 
-// class Circle extends Box {
-//   constructor(params) {
-//     super(params);
-//     // this.element.style.background = params.color;
-//     // this.element.style.height = params.height;
-//     // this.element.style.width = params.width; berish shartmas chinki voris olinmoqda
-//     this.element.style.borderRadius = "50%";
-//   }
-// }
+class Circle extends Box {
+  constructor(params) {
+    super(params);
+    // this.element.style.background = params.color;
+    // this.element.style.height = params.height;
+    // this.element.style.width = params.width; berish shartmas chinki voris olinmoqda
+    this.element.style.borderRadius = "50%";
+  }
+}
 
-// const Circle1 = new Circle({
-//   selector: "#circle1",
-//   width: "200px",
-//   height: "200px",
-//   color: "purple",
-// });
+const Circle1 = new Circle({
+  selector: "#circle1",
+  width: "200px",
+  height: "200px",
+  color: "purple",
+});
 
 /////////////////////////////////////////////////////////////////////////////////////
 // abstraction - mavhumlik
