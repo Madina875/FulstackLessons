@@ -27,12 +27,51 @@ const getOne = async (req, res) => {
   }
 };
 
-const create = async (req, res) => {};
+const create = async (req, res) => {
+  try {
+    const { name, description } = req.body;
+    const newType = await Currency_type.create({ name, description });
+    res.status(201).send({ message: "New type added", newType });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
+  }
+};
 
-const remove = async (req, res) => {};
+const remove = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).send({ error: "ID incorrect" });
+    }
+    const ctype = await Currency_type.deleteOne({ _id: id });
+    res.status(200).send({ message: "type deleted successfily ✅" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
+  }
+};
 
 const update = async (req, res) => {
-  let;
+  try {
+    const { id } = req.params;
+    const { name, description } = req.body;
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).send({ error: "ID incorrect" });
+    }
+    const ctype = await Currency_type.updateOne(
+      { _id: id },
+      { name, description }
+    );
+    console.log(ctype);
+    if (ctype.matchedCount == 0) {
+      return res.status(404).send({ message: "type not found" });
+    }
+    res.status(200).send({ message: "ctype updated" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
+  }
 };
 
 module.exports = {

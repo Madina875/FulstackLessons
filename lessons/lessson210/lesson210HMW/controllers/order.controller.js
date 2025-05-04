@@ -28,11 +28,85 @@ const getOne = async (req, res) => {
   }
 };
 
-const create = async (req, res) => {};
+const create = async (req, res) => {
+  try {
+    const {
+      client_id,
+      product_link,
+      quantity,
+      summa,
+      currency_type_id,
+      truck,
+      desciption,
+    } = req.body;
+    const newOrder = await Order.create({
+      client_id,
+      product_link,
+      quantity,
+      summa,
+      currency_type_id,
+      truck,
+      desciption,
+    });
+    res.status(201).send({ newOrder });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
+  }
+};
 
-const remove = async (req, res) => {};
+const remove = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).send({ error: "ID incorrect" });
+    }
+    const order = await Order.deleteOne({ _id: id });
+    res.status(200).send({ message: "order deleted successfily ✅" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
+  }
+};
 
-const update = async (req, res) => {};
+const update = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const {
+      client_id,
+      product_link,
+      quantity,
+      summa,
+      currency_type_id,
+      truck,
+      desciption,
+    } = req.body;
+
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).send({ error: "ID incorrect" });
+    }
+    const order = await Order.updateOne(
+      { _id: id },
+      {
+        client_id,
+        product_link,
+        quantity,
+        summa,
+        currency_type_id,
+        truck,
+        desciption,
+      }
+    );
+    console.log(order);
+    if (order.matchedCount == 0) {
+      return res.status(404).send({ message: "order not found" });
+    }
+    res.status(200).send({ message: "order updated" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
+  }
+};
 
 module.exports = {
   getAll,

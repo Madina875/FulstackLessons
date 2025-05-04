@@ -27,22 +27,56 @@ const getOne = async (req, res) => {
   }
 };
 
-const create = async (req, res) => {};
+const create = async (req, res) => {
+  try {
+    const { full_name, phone_number, address, email } = req.body;
+    const newClient = await Client.create({
+      full_name,
+      phone_number,
+      address,
+      email,
+    });
+    res.status(201).send({ message: "New client added", newClient });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
+  }
+};
 
-const remove = async (req, res) => {};
+const remove = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).send({ error: "ID incorrect" });
+    }
+    const book = await Client.deleteOne({ _id: id });
+    res.status(200).send({ message: "client deleted successfily ✅" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
+  }
+};
 
 const update = async (req, res) => {
-  let { id } = req.params;
-  let data = req.body;
   try {
-    const client = await Client.updateOne({ _id: id }, { body });
-    console.log(book);
+    const { id } = req.params;
+    const { full_name, phone_number, address, email } = req.body;
+
+    if (!mongoose.isValidObjectId(id)) {
+      return res.status(400).send({ error: "ID incorrect" });
+    }
+    const client = await Client.updateOne(
+      { _id: id },
+      { full_name, phone_number, address, email }
+    );
+    console.log(client);
     if (client.matchedCount == 0) {
       return res.status(404).send({ message: "client not found" });
     }
     res.status(200).send({ message: "client updated" });
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
+    res.status(500).send({ error: "Serverda xatolik" });
   }
 };
 

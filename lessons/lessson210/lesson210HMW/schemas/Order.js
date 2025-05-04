@@ -1,5 +1,4 @@
 const { Schema, model } = require("mongoose");
-const Currency_type = require("./Currency_type");
 
 const orderSchema = new Schema(
   {
