@@ -3,7 +3,7 @@ const Client = require("../schemas/Client");
 
 const getAll = async (req, res) => {
   try {
-    const clients = await Client.find();
+    const clients = await Client.find().populate("Orders");
     res.status(200).send({ clients });
   } catch (error) {
     console.log(error);
@@ -29,14 +29,11 @@ const getOne = async (req, res) => {
 
 const create = async (req, res) => {
   try {
-    const { full_name, phone_number, address, email } = req.body;
+    const data = req.body;
     const newClient = await Client.create({
-      full_name,
-      phone_number,
-      address,
-      email,
+      data,
     });
-    res.status(201).send({ message: "New client added", newClient });
+    res.status(201).send({ newClient });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });
@@ -61,7 +58,6 @@ const update = async (req, res) => {
   try {
     const { id } = req.params;
     const { full_name, phone_number, address, email } = req.body;
-
     if (!mongoose.isValidObjectId(id)) {
       return res.status(400).send({ error: "ID incorrect" });
     }
@@ -69,7 +65,7 @@ const update = async (req, res) => {
       { _id: id },
       { full_name, phone_number, address, email }
     );
-    console.log(client);
+
     if (client.matchedCount == 0) {
       return res.status(404).send({ message: "client not found" });
     }

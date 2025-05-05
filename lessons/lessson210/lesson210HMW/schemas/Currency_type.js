@@ -4,9 +4,16 @@ const currency_typeSchema = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String },
+    orders: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Order",
+      },
+    ],
   },
   {
     versionKey: false,
+    timestamps: true,
   }
 );
 

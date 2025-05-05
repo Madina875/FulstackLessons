@@ -1,5 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const Order = require("../schemas/Order");
+const Client = require("../schemas/Client");
+const Currency_type = require("../schemas/Currency_type");
 
 const getAll = async (req, res) => {
   try {
@@ -13,15 +15,20 @@ const getAll = async (req, res) => {
 };
 
 const getOne = async (req, res) => {
-  const { id } = req.params;
+  const data = req.body;
   try {
-    const order = await Order.findById(id);
-    if (!order) {
-      return res.status(404).send({
-        message: "i can't find any orders 😕",
-      });
-    }
-    res.status(200).send({ order });
+    let createOrder = await Order.create(data);
+
+    let client = await Client.findById(data.client_id);
+
+    let currencyType = await Currency_type.findById(data.currency_type_id);
+    client.orders.push(createOrder._id);
+    currencyType.orders.push(currencyType._id);
+
+    currencyType.save();
+    client.save();
+
+    res.status(200).send({ createOrder });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });
@@ -30,24 +37,9 @@ const getOne = async (req, res) => {
 
 const create = async (req, res) => {
   try {
-    const {
-      client_id,
-      product_link,
-      quantity,
-      summa,
-      currency_type_id,
-      truck,
-      desciption,
-    } = req.body;
-    const newOrder = await Order.create({
-      client_id,
-      product_link,
-      quantity,
-      summa,
-      currency_type_id,
-      truck,
-      desciption,
-    });
+    const data = req.body;
+    console.log(data);
+    const newOrder = await Order.create({ data });
     res.status(201).send({ newOrder });
   } catch (error) {
     console.log(error);
@@ -72,35 +64,12 @@ const remove = async (req, res) => {
 const update = async (req, res) => {
   try {
     const { id } = req.params;
-    const {
-      client_id,
-      product_link,
-      quantity,
-      summa,
-      currency_type_id,
-      truck,
-      desciption,
-    } = req.body;
+    const data = req.body;
 
     if (!mongoose.isValidObjectId(id)) {
       return res.status(400).send({ error: "ID incorrect" });
     }
-    const order = await Order.updateOne(
-      { _id: id },
-      {
-        client_id,
-        product_link,
-        quantity,
-        summa,
-        currency_type_id,
-        truck,
-        desciption,
-      }
-    );
-    console.log(order);
-    if (order.matchedCount == 0) {
-      return res.status(404).send({ message: "order not found" });
-    }
+    const order = await Order.updateOne({ _id: id }, { data });
     res.status(200).send({ message: "order updated" });
   } catch (error) {
     console.log(error);
