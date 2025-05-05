@@ -9,8 +9,8 @@ const {
 const router = require("express").Router();
 
 router.get("/", getAll);
-router.get("/:id", getOne);
 router.post("/create", create);
+router.get("/:id", getOne);
 router.delete("/:id", remove);
 router.patch("/:id", update);
 

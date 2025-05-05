@@ -1,10 +1,9 @@
-const { default: mongoose } = require("mongoose");
 const Client = require("../schemas/Client");
 
 const getAll = async (req, res) => {
   try {
-    const clients = await Client.find().populate("Orders");
-    res.status(200).send({ clients });
+    const clients = await Client.find({});
+    res.status(200).send({ data: clients });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });
@@ -30,10 +29,8 @@ const getOne = async (req, res) => {
 const create = async (req, res) => {
   try {
     const data = req.body;
-    const newClient = await Client.create({
-      data,
-    });
-    res.status(201).send({ newClient });
+    const newClient = await Client.create(data);
+    res.status(201).send({ data: newClient });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });
@@ -41,13 +38,10 @@ const create = async (req, res) => {
 };
 
 const remove = async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
-    if (!mongoose.isValidObjectId(id)) {
-      return res.status(400).send({ error: "ID incorrect" });
-    }
-    const book = await Client.deleteOne({ _id: id });
-    res.status(200).send({ message: "client deleted successfily ✅" });
+    await Client.findByIdAndDelete(id);
+    res.status(200).send({ data: "client deleted successfily ✅" });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });
@@ -55,21 +49,12 @@ const remove = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { full_name, phone_number, address, email } = req.body;
-    if (!mongoose.isValidObjectId(id)) {
-      return res.status(400).send({ error: "ID incorrect" });
-    }
-    const client = await Client.updateOne(
-      { _id: id },
-      { full_name, phone_number, address, email }
-    );
+  const { id } = req.params;
+  const data = req.body;
 
-    if (client.matchedCount == 0) {
-      return res.status(404).send({ message: "client not found" });
-    }
-    res.status(200).send({ message: "client updated" });
+  try {
+    let updateClient = await Client.findByIdAndUpdate(id, data);
+    res.status(200).send({ data: updateClient });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });

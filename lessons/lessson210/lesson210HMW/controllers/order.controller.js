@@ -1,13 +1,14 @@
 const { default: mongoose } = require("mongoose");
 const Order = require("../schemas/Order");
 const Client = require("../schemas/Client");
+const dotenv = require("dotenv");
 const Currency_type = require("../schemas/Currency_type");
 
 const getAll = async (req, res) => {
   try {
     // const orders = await Order.find().select("name");
     const orders = await Order.find();
-    res.status(200).send({ orders });
+    res.status(200).send({ data: orders });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });
@@ -15,7 +16,7 @@ const getAll = async (req, res) => {
 };
 
 const getOne = async (req, res) => {
-  const data = req.body;
+  const { id } = req.body;
   try {
     let createOrder = await Order.create(data);
 
@@ -39,8 +40,13 @@ const create = async (req, res) => {
   try {
     const data = req.body;
     console.log(data);
-    const newOrder = await Order.create({ data });
-    res.status(201).send({ newOrder });
+    const createOrder = await Order.create(data);
+    const client = await Client.findById(data.client_id);
+
+    client.orders.push(createOrder._id);
+    await client.save();
+
+    res.status(201).send({ data: createOrder });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });
@@ -50,11 +56,8 @@ const create = async (req, res) => {
 const remove = async (req, res) => {
   try {
     const { id } = req.params;
-    if (!mongoose.isValidObjectId(id)) {
-      return res.status(400).send({ error: "ID incorrect" });
-    }
-    const order = await Order.deleteOne({ _id: id });
-    res.status(200).send({ message: "order deleted successfily ✅" });
+    await Order.findByIdAndDelete({ id });
+    res.status(200).send({ data: "order deleted successfily ✅" });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });
@@ -65,12 +68,8 @@ const update = async (req, res) => {
   try {
     const { id } = req.params;
     const data = req.body;
-
-    if (!mongoose.isValidObjectId(id)) {
-      return res.status(400).send({ error: "ID incorrect" });
-    }
-    const order = await Order.updateOne({ _id: id }, { data });
-    res.status(200).send({ message: "order updated" });
+    const updateOrder = await Order.findByIdAndUpdate(id, data);
+    res.status(200).send({ data: updateOrder });
   } catch (error) {
     console.log(error);
     res.status(500).send({ error: "Serverda xatolik" });

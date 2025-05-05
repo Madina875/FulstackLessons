@@ -23,7 +23,6 @@ const clientSchema = new Schema(
         ref: "Order",
       },
     ],
-    
   },
   {
     versionKey: false,

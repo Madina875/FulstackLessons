@@ -4,7 +4,7 @@ const currency_typeSchema = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String },
-    orders: [
+    order_id: [
       {
         type: Schema.Types.ObjectId,
         ref: "Order",
