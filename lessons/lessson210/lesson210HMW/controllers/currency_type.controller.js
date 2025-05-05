@@ -3,7 +3,7 @@ const Currency_type = require("../schemas/Currency_type");
 
 const getAll = async (req, res) => {
   try {
-    const currency_types = await Currency_type.find();
+    const currency_types = await Currency_type.find().populate("orders");
     res.status(200).send({ currency_types });
   } catch (error) {
     console.log(error);
@@ -29,8 +29,8 @@ const getOne = async (req, res) => {
 
 const create = async (req, res) => {
   try {
-    const { name, description } = req.body;
-    const newType = await Currency_type.create({ name, description });
+    const data = req.body;
+    const newType = await Currency_type.create(data);
     res.status(201).send({ message: "New type added", newType });
   } catch (error) {
     console.log(error);

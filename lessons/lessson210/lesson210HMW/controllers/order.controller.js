@@ -42,7 +42,8 @@ const create = async (req, res) => {
     console.log(data);
     const createOrder = await Order.create(data);
     const client = await Client.findById(data.client_id);
-
+    const currency_type = await Currency_type.findById(data.currency_type_id);
+    currency_type.orders.push(createOrder._id);
     client.orders.push(createOrder._id);
     await client.save();
 

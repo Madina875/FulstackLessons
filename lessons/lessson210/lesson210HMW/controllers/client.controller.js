@@ -2,7 +2,7 @@ const Client = require("../schemas/Client");
 
 const getAll = async (req, res) => {
   try {
-    const clients = await Client.find({});
+    const clients = await Client.find().populate("orders");
     res.status(200).send({ data: clients });
   } catch (error) {
     console.log(error);
