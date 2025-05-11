@@ -1,0 +1,109 @@
+use("fn21");
+db.admin.insertMany([
+  {
+    first_name: "Jobir",
+    last_name: "Olimov",
+    age: 25,
+    family: {
+      father: {
+        first_name: "Davron",
+        age: 50,
+      },
+    },
+    coding_lang: ["JS", "Python"],
+    email: "jobir@mail.uz",
+    hasCar: true,
+    isMarried: false,
+  },
+  {
+    first_name: "Vohid",
+    last_name: "Botirov",
+    age: 22,
+    family: {
+      father: {
+        first_name: "Sattor",
+        age: 45,
+      },
+      wife: {
+        first_name: "Salima",
+        age: 19,
+      },
+    },
+    coding_lang: ["C++", "Python"],
+    email: "vohid@mail.uz",
+    hasCar: false,
+    isMarried: true,
+  },
+]);
+
+use("fn21");
+db.admin.insertOne({
+  first_name: "Sobir",
+  last_name: "Dolimov",
+  age: 25,
+  coding_lang: ["JS", "C++", "Python"],
+  father: {
+    first_name: "Xoshim",
+    last_name: "Dolimov",
+    age: 48,
+  },
+  hasCar: true,
+  isMarried: false,
+});
+
+use("fn21");
+db.users.bulkWrite([
+  {
+    insertOne: {
+      document: { first_name: "Marufjon" },
+    },
+  },
+  {
+    updateOne: {
+      filter: { age: 22 },
+      update: { $set: { first_name: "Xoshimjon" } },
+    },
+  },
+  {
+    deleteOne: {
+      filter: { age: 23 },
+    },
+  },
+]);
+
+use("fn21");
+db.posts.insertOne({
+  author: "Karimov Sardor",
+  title: "Oltin Tezlik o'zgardi",
+  content:
+    "Avtomobillarni shahar ichidagi yurish tezligiga cheklovlar qo'yildi",
+  date: new Date(),
+});
+db.posts.insertMany([
+  {
+    author: "Vohidov Zafar",
+    title: "Zafarli yurishlar davom etmoqda",
+    content: `Dyuzdochilarimizni Zafarli yurishlari davom etmoqda. 
+            Navbatdagi oltin medalni kutib oling`,
+    date: new Date(),
+  },
+  {
+    author: "Polvonov Olim",
+    title: "Futzalchilar kutib olindi",
+    content: `Futzal bo'yicha Osiyo chempionatida bronza medalni olgan 
+            Futzalchilar tantanali kutib olindi`,
+    date: new Date(),
+  },
+]);
+
+use("fn21");
+db.posts
+  .find(
+    {
+      $text: { $search: "kutib" },
+    },
+    {
+      score: { $meta: "textScore" },
+    }
+  )
+  .sort({ score: { $meta: "textScore" } });
